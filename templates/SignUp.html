@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/regis.css' %}">
+<section>
+  <div class="form-box">
+      <div class="form-value">
+          <form action="" method="POST">
+            {% csrf_token %}
+              <h2>Register</h2>
+              <div class="inputbox">
+                <ion-icon name="first_name"></ion-icon>
+                <input type="text" name="fname" required>
+                <label for="fname">First Name</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="last_name"></ion-icon>
+                <input type="text" name="sname" required>
+                <label for="fname">Last Name</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="uname"></ion-icon>
+                <input type="text" name="uname" required>
+                <label for="fname">Username</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email" required>
+                <label for="fname">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="pass" required>
+                <label for="fname">Password</label>
+            </div>
+            <button>Sign UP</button>
+            <div class="register">
+                <p>Already have an account? <a href="/Login">Login</a></p>
+            </div>
+          </form>
+      </div>
+  </div>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+{% endblock %}
+
+

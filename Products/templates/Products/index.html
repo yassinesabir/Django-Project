@@ -1,0 +1,30 @@
+{%extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/g.css' %}">
+<section>
+    <table class="table-bordered table-hover">
+        <tr>
+        <th> name </th>
+        <th> image </th>
+        <th> price </th>
+        <th> size </th>
+        <th> categorie </th>
+        <th> subcategorie</th>
+        <th> date_creation</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td><a href="/Products/{{Product.id}}">{{product.name}} </td>
+            <td><img class="photo-smaller" src="/static/images/japan.jpg"> </td>
+            <td>{{product.price}} </td>
+            <td>{{product.size}} </td>
+            <td>{{product.categorie}} </td>
+            <td>{{product.subcategorie}}</td>
+            <td>{{product.date_creation}}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+</section>
+{% endblock content %}

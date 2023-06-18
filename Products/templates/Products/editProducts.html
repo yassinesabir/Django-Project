@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+{% block content %}
+<h6>
+Bonjour {{nom}}
+</h6>
+<form method="POST">{% csrf_token %}
+{{form}}
+    <button type="submit">Valider</button>
+</form>
+{% endblock content %}
+
+ 
