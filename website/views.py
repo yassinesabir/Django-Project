@@ -34,7 +34,7 @@ def Login(request):
         user = authenticate(request, username=name, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('/Products')
         else:
             return redirect('Product_SignUp')
 
@@ -57,6 +57,6 @@ def Profils(request):
         phone_Number = request.POST.get('phone')
         address = request.POST.get('address')
         profil = Profil.objects.create(username=username, email=email, Cin_Number=Cin_Number, phone_Number=phone_Number,address=address)
-        #profil.save()
+        profil.save()
         return redirect('/Products')
     return render(request, 'profile.html',)

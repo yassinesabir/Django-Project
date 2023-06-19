@@ -1,0 +1,138 @@
+{% extends "base.html"%}
+{%  block content %}
+
+<section>
+  <div class="container">
+    <div class="product-details">
+      <h1>Chemise manches courtes popeline</h1>
+      <div class="product-image">
+        <img src="chemise.jpg" alt="Chemise manches courtes popeline">
+      </div>
+      <div class="product-description">
+        <p>Description du produit ici...</p>
+      </div>
+      <div class="product-price">
+        <span class="price">{{product.price}}</span>
+        <button class="Order">Order</button>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+<div class="container">
+  <div class="card">
+      <div class="row no-gutters">
+          <aside class="col-md-6">
+  <article class="gallery-wrap"> 
+  <div class="img-big-wrap">
+    <div> <a href="#"><img src="/media/{{product.product_images.first.image}}"></a></div>
+  </div> 
+  <div class="thumbs-wrap">
+    {% for image in product.product_images.all %}
+    <a href="#" class="item-thumb"> <img src="/media/{{image.image}}"></a>
+    
+    {% endfor %}
+
+  </div> 
+  </article> 
+          </aside>
+          <main class="col-md-6 border-left">
+  <article class="content-body">
+  
+  <h2 class="title">{{product.name}}</h2>
+  
+  <div class="rating-wrap my-3">
+      <ul class="rating-stars">
+          <li style="width:80%" class="stars-active"> 
+              <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+              <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+              <i class="fa fa-star"></i> 
+          </li>
+          <li>
+              <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+              <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+              <i class="fa fa-star"></i> 
+          </li>
+      </ul>
+      <small class="label-rating text-muted">132 reviews</small>
+      <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small>
+  </div> 
+  
+  <div class="mb-3"> 
+      <var class="price h4">${{product.price}}.00</var> 
+      <span class="text-muted">/per kg</span> 
+  </div> 
+  
+  <p>{{product.product_desription}}</p>
+  
+  
+  <dl class="row">
+    <dt class="col-sm-3">Model#</dt>
+    <dd class="col-sm-9">Odsy-1000</dd>
+  
+    <dt class="col-sm-3">Color</dt>
+    <dd class="col-sm-9">Brown</dd>
+  
+    <dt class="col-sm-3">Delivery</dt>
+    <dd class="col-sm-9">Russia, USA, and Europe </dd>
+  </dl>
+  
+  <hr>
+      <div class="form-row">
+          <div class="form-group col-md flex-grow-0">
+              <label>Quantity</label>
+              <div class="input-group mb-3 input-spinner">
+                <div class="input-group-prepend">
+                  <button class="btn btn-light" type="button" id="button-plus"> + </button>
+                </div>
+                <input type="text" class="form-control" value="1">
+                <div class="input-group-append">
+                  <button class="btn btn-light" type="button" id="button-minus"> − </button>
+                </div>
+              </div>
+          </div> 
+          {% if product.size_variant.count %}
+          <div class="form-group col-md">
+                  <label>Select size</label>
+                  <div class="mt-1">
+                    {% for size in product.size_variant.all %}
+                    
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="select_size" checked="" class="custom-control-input">
+                        <div class="custom-control-label">{{size.size_name}}</div>
+                      </label>
+  
+                    {% endfor %}
+  
+                  </div>
+          </div>
+          {% endif %}
+          
+      </div> 
+  
+      <a href="#" class="btn  btn-primary"> Buy now </a>
+      <a href="#" class="btn  btn-outline-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i>  </a>
+  </article> 
+          </main> 
+      </div> 
+  </div> 
+  
+
+  </div>
+  </section> {% endcomment %}

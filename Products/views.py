@@ -2,14 +2,16 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .forms import GestionProduits
-
+from tkinter import E
 
 # Create your views here.
-
 def index(request):
     Products = Product.objects.all()
     return render(request,'Products/index.html',{'products':Products})
-    
+
+def Buyproduct(request):
+    return render(request  , 'Products/BuyProducts.html')
+
 def detail(request, Product_id):
     # product = Product.objects.get(id=Product_id)
     product = get_object_or_404(Product, id=Product_id)
@@ -27,3 +29,6 @@ def editProducts(request):
     }
     return render(request, "Products/editProducts.html", contexte)
 
+# def Buyproduct(request):
+#     Products = Product.objects.all()
+#     return render(request  , 'Products/BuyProducts.html' ,{'Products' : Products})

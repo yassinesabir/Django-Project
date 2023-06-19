@@ -1,9 +1,9 @@
 {%extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{%static 'css/g.css' %}">
+<link rel="stylesheet" href="{%static 'css/productstable.css' %}">
 <section>
-    <table class="table-bordered table-hover">
+    <table class="table-bordered table-hover custom-table">
         <tr>
         <th> name </th>
         <th> image </th>
@@ -15,8 +15,8 @@
         </tr>
         {% for product in products %}
         <tr>
-            <td><a href="/Products/{{Product.id}}">{{product.name}} </td>
-            <td><img class="photo-smaller" src="/static/images/japan.jpg"> </td>
+            <td><a class="black-link" href="Buyproduct">{{ product.name }}</a></td>
+            <td><img class="photo-smaller" src="/static/produitsimages/{{ forloop.counter }}.jpg"> </td>
             <td>{{product.price}} </td>
             <td>{{product.size}} </td>
             <td>{{product.categorie}} </td>
@@ -28,3 +28,56 @@
     </table>
 </section>
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <div class="container mt-5 pt-5">
+        <div class="row">
+            
+            {% for Product in Products %}
+            <div class="col-md-3">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                    <figcaption class="info-wrap border-top">
+                        <a href="{% url 'get_product' product.slug %}" class="title">
+                            <b>{{product.product_name}}</b></a>
+                        <div class="price mt-2">${{product.price}}.00</div> <!-- price-wrap.// -->
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col.// -->
+    
+            {% endfor %}
+          
+            
+           
+        </div>
+    
+        </div> {% endcomment %}
